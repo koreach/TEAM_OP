@@ -22,11 +22,11 @@ var buckets = require('../bucket.json');
 var bucketdb = db.collection('bucket');
 
 exports.view = function(req, res){
-	if (req.session.user) {console.log("a");
+	if (req.session.user) {
           //bucketdb.find().sort().exec(renderBucket); 
            
             //function renderBucket(err, bucket) {
-              res.render('bucket', {'bucketdb': bucket})
+              res.render('bucket', buckets)
            // }
        
     } else {
@@ -44,8 +44,8 @@ exports.addToBucket = function(req, res) {
         
       
       
-      bucketdb.save(buc);
+     // bucketdb.save(buc);
         //bucketdata.save(buc);
   	res.render('bucket',bucketdb); 
-    //bucketdb.unshift(buc); 
+    buckets.bucketlist.unshift(buc); 
 };
