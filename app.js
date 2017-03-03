@@ -51,8 +51,8 @@ if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
 //configuration
-mongoose.connect("mongodb://teamop:teamop170@olympia.modulusmongo.net:27017/quB6uvyz");
-
+//mongoose.connect("mongodb://teamop:teamop170@olympia.modulusmongo.net:27017/quB6uvyz");
+mongoose.connect("mongodb://teamop:teamop170@ds113680.mlab.com:13680/useraccount");
 var UserSchema = new mongoose.Schema({
     username: String,
     password: String,
@@ -131,7 +131,7 @@ app.post("/login", function (req, res) {
 
             req.session.regenerate(function () {
                 //  console.log(user);
-                req.session.user = user;
+                req.session.user = user; console.log('id: %s', user._id);
                 req.session.success = 'Authenticated as ' + user.username + ' click to <a href="/logout">logout</a>. ' + ' You may now access <a href="/restricted">/restricted</a>.';
                 res.redirect('/');
             });
