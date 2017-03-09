@@ -126,7 +126,7 @@ app.post("/createlogin", userExist, function (req, res) {
 
 app.post("/login", function (req, res) {
     authenticate(req.body.username, req.body.password, function (err, user) {
-       
+
         if (user) {
 
             req.session.regenerate(function () {
@@ -143,7 +143,7 @@ app.post("/login", function (req, res) {
 });
 
 app.get('/logout', function (req, res) {
-    req.session.destroy(function () { 
+    req.session.destroy(function () {
         res.redirect('/');
     });
 });

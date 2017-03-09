@@ -22,13 +22,8 @@ var buckets = require('../bucket.json');
 var bucketdb = db.collection('bucket');
 
 exports.view = function(req, res){
-	if (req.session.user) {console.log("a");
-          //bucketdb.find().sort().exec(renderBucket); 
-           
-            //function renderBucket(err, bucket) {
-              res.render('bucket', {'bucketdb': bucket})
-           // }
-       
+	if (req.session.user) {
+        res.render('bucket', {bucketdb, res});
     } else {
         res.redirect("/login");
     }
@@ -41,11 +36,8 @@ exports.addToBucket = function(req, res) {
   				endingLoc: req.query.endingLoc,
   				theme: req.query.theme
   			};
-        
-      
-      
       bucketdb.save(buc);
         //bucketdata.save(buc);
-  	res.render('bucket',bucketdb); 
-    //bucketdb.unshift(buc); 
+  	res.render('bucket',bucketdb);
+    //bucketdb.unshift(buc);
 };
