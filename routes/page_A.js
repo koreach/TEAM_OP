@@ -7,11 +7,11 @@ exports.viewA = function(req, res){
 var feed = require("../index.json");
 
 exports.viewA = function(req, res){
-  if (req.session.user) {
+  //if (req.session.user) {
       res.render('page_A',feed);
-  } else {
-      res.redirect("/login")
-  }
+  //} else {
+  //    res.redirect("/login")
+  //}
 };
 
 exports.addToFeedA = function(req, res) {

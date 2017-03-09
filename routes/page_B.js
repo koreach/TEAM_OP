@@ -9,11 +9,11 @@ var feed = require("../index.json");
 
 
 exports.viewB = function(req, res){
-  if (req.session.user) {
+  //if (req.session.user) {
       res.render('page_B',feed);
-  } else {
-      res.redirect("/login")
-  }
+  //} else {
+  //    res.redirect("/login")
+//  }
 };
 
 exports.addToFeedB = function(req, res) {
