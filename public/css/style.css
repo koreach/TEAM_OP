@@ -109,8 +109,9 @@ nav .active {
 @media screen and (max-width: 768px) { .feed-box { margin:0 !important; padding: 0 !important } }
 .feed-info {
 	padding-top: 10px;
-	overflow-x: scroll;
-	overflow-y: hidden;
+	overflow-x: hidden;
+	height: 60px;
+	overflow-y: scroll;
 	white-space: nowrap;
 }
 
@@ -119,14 +120,13 @@ nav .active {
 	margin-right: 7px;
 	width: 50px;
 	height: 50px;
+	float: left;
+	display: block;
 }
 
 .img-layout {
 	clear: both;
 	text-align: center;
-}
-
-.img-layout .picture {
 	max-width: 100%;
 	height: auto;
 	margin: 0 auto;
@@ -137,8 +137,7 @@ nav .active {
 
 .img-layout .description {
 	position: absolute;
-	padding-top: 20px;
-	top: 75px;
+	top: 36px;
 	padding-right: 40px;
 	display: none;
 	color:#fff;
@@ -146,9 +145,11 @@ nav .active {
 	height: 65%;
 }
 
+
 @media screen and (max-width: 768px) {.img-layout .description {
 		font-size: 3vw !important;
 		padding-right: 15px !important;
+		top: 30px !important;
 }}
 
 @media screen and (min-width: 768px) { .img-layout .description p { font-size: 15px !important; } }
@@ -163,9 +164,9 @@ nav .active {
 	/*height: 70%;
 	overflow: hidden;*/
 }
-.img-layout .nav-icon {
-	width: 40%;
 
+.img-layout .nav-icon {
+	max-width: 50%;
 }
 
 /********************************Bucket****************************************/
@@ -625,6 +626,14 @@ nav .active {
 	width: 738px;
 	position: relative;
 }
+.img-layout .picture {
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto;
+	width: 720px;
+	position: relative;
+	color:black;
+}
 
 @media screen and (max-width: 768px)
 { .adventure .button {
@@ -754,4 +763,23 @@ nav .active {
 		margin-top: 10px !important;
 
 		cursor: pointer;
+	}
+
+
+	.container2 {
+	    width:100%;
+			background-color: gray;
+			color: white;
+	}
+
+	.container2 .header {
+	    background-color:#d3d3d3;
+	    padding: 2px;
+
+	    cursor: pointer;
+	    font-weight: bold;
+	}
+	.container2 .content2 {
+	    display: none;
+	    padding : 5px;
 	}

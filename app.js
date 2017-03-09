@@ -67,7 +67,11 @@ app.use(express.cookieParser('Authentication Tutorial '));
 
 // Add routes here
 app.get('/', index.view);
+app.get('/page_A', index.viewA);
+app.get('/page_B', index.viewB);
 app.get('/feed', index.addToFeed);
+app.get('/feed_A', index.addToFeedA);
+app.get('/feed_B', index.addToFeedB);
 
 app.get('/bucket', bucket.view);
 app.get('/buckets', bucket.addToBucket);

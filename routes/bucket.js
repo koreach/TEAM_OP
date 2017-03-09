@@ -23,7 +23,10 @@ var bucketdb = db.collection('bucket');
 
 exports.view = function(req, res){
 	if (req.session.user) {
-        res.render('bucket', {bucketdb, res});
+          //bucketdb.find().sort().exec(renderBucket);
+            //function renderBucket(err, bucket) {
+              res.render('bucket', buckets)
+           // }
     } else {
         res.redirect("/login");
     }
@@ -36,8 +39,9 @@ exports.addToBucket = function(req, res) {
   				endingLoc: req.query.endingLoc,
   				theme: req.query.theme
   			};
-      bucketdb.save(buc);
+
+     // bucketdb.save(buc);
         //bucketdata.save(buc);
   	res.render('bucket',bucketdb);
-    //bucketdb.unshift(buc);
+    buckets.bucketlist.unshift(buc);
 };
