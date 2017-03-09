@@ -2,189 +2,211 @@
 <html>
 
 <head>
-    <title>ADVENTURE YOU</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=
-            device-width, height=device-height, initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    </link>
-    <link rel="stylesheet" href="css/bootstrap-theme.css">
-    </link>
-    <link rel="stylesheet" href="css/style.css">
-    </link>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/sweetalert.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+  <title>ADVENTURE YOU</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=
+  device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="css/bootstrap.css">
+</link>
+<link rel="stylesheet" href="css/bootstrap-theme.css">
+</link>
+<link rel="stylesheet" href="css/style.css">
+</link>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/sweetalert.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
 </head>
 
 <header>
-    <div id="header">
-        <div class="container">
-            <div>
-                <div class="title">
-                    <a href="/"><img class="adventureyou" src="images/ADVENTURE YOU.png"></a>
-                </div>
-                <div>
-                    <nav>
-                        <ul>
-                            <div class="navbar-menu">
-                                <li>
-                                    <a href="friend"><img class="nav-icon" src="images/Plus.png"></a>
-                                </li>
-                                <li>
-                                    <a href="/"><img class="nav-icon" src="images/Feed Icon.png"></a>
-                                </li>
-                                <li>
-                                    <a href="start_adventure"><img class="nav-icon" src="images/Mountain.png"></a>
-                                </li>
-                                <li>
-                                    <a class="active" href="bucket"><img class="nav-icon" src="images/Bucketlist Icon.png"></a>
-                                </li>
-                                <li>
-                                <button class="hamburger">&#9776;</button>
-                                </li>
-                            </div>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <div style="position: relative;">
-                    <div class="menu">
-                        <ul>
-                            <a href="/logout">
-                                <li>Log Out</li>
-                            </a>
-                            <a href="friend">
-                                <li>Create an Adventure</li>
-                            </a>
-                            <a href="/">
-                                <li>Newsfeed</li>
-                            </a>
-                            <a href="start_adventure">
-                                <li>Start Adventuring</li>
-                            </a>
-                            <a href="bucket">
-                                <li>Bucket List</li>
-                            </a>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+  <div id="header">
+    <div class="container">
+      <div>
+        <div class="title">
+          <a href="/"><img class="adventureyou" src="images/ADVENTURE YOU.png"></a>
         </div>
-    </header>
+        <div>
+          <nav>
+            <ul>
+              <div class="navbar-menu">
+                <li>
+                  <a href="friend"><img class="nav-icon" src="images/Plus.png"></a>
+                </li>
+                <li>
+                  <a href="/"><img class="nav-icon" src="images/Feed Icon.png"></a>
+                </li>
+                <li>
+                  <a href="start_adventure"><img class="nav-icon" src="images/Mountain.png"></a>
+                </li>
+                <li>
+                  <a class="active" href="bucket"><img class="nav-icon" src="images/Bucketlist Icon.png"></a>
+                </li>
+                <li>
+                  <button class="hamburger">&#9776;</button>
+                </li>
+              </div>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div style="position: relative;">
+        <div class="menu">
+          <ul>
+            <a href="/logout">
+              <li>Log Out</li>
+            </a>
+            <a href="friend">
+              <li>Create an Adventure</li>
+            </a>
+            <a href="/">
+              <li>Newsfeed</li>
+            </a>
+            <a href="start_adventure">
+              <li>Start Adventuring</li>
+            </a>
+            <a href="bucket">
+              <li>Bucket List</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
 <section id="bucket">
-    <body>
-      <div id = "message">
-        <div id = "mimg" class="container">
-          <div class="foo blue">
-                <h2>Start Your Adventure Today!</h2>
-                <a href="friend">
-                  <button class="foobutton" formaction="friend">Create New Adventure</button>
-                </a>
-                <a href="/">
-                  <button class="foobutton2">Add New Adventure</button>
-                </a>
-          </div>
+  <body>
+    <div id = "message">
+      <div id = "mimg" class="container">
+        <div class="foo blue">
+          <h2>Start Your Adventure Today!</h2>
+          <a href="friend">
+            <button class="foobutton" formaction="friend">Create New Adventure</button>
+          </a>
+          <a href="/">
+            <button class="foobutton2">Add New Adventure</button>
+          </a>
         </div>
+      </div>
     </div>
 
-        <div class="container">
-            {{#each bucketlist}}
-              <div class="bucket-block">
-                  <div class="col-md-6 col-sm-12 col-xs-12 align-element">
-                    <!-- clearfix visible-md visible-lg visible-xs visible-sm-->
-                      <img class="pic" src="{{picture}}">
-                      <p class="bucket_text">
-                          {{theme}}
-                      </p>
-                      <a class="popup-trigger">Show More</a>
-                      <div class="popup">
-                          <div class="content" style="text-align: center">
-                              <img class="overlayimg" src="{{picture}}">
-                              <p id ="description">{{description}}</p>
-                              <p>Starting Location:  <span id="startingLoc">{{startingLoc}}</span></p>
-                              <p>Ending Location:  <span id="endingLoc">{{endingLoc}}</span></p>
-                              <p>Theme:<span id="theme">{{theme}}</span></p>
-                          </div>
-                        <div class="popup-btn-close">close</div>
-                        <div class="popup-btn-share" onclick="shared()">share</div>
-                        <div class="popup-btn-start" onclick="start()">start adventure</div>
-                      </div>
-                  </div>
-              </div>
-            {{/each}}
+    <div class="container">
+      {{#each bucketlist}}
+      <div class="bucket-block">
+        <div class="col-md-6 col-sm-12 col-xs-12 align-element">
+          <!-- clearfix visible-md visible-lg visible-xs visible-sm-->
+          <img class="pic" src="{{picture}}">
+          <p class="bucket_text">
+            {{theme}}
+          </p>
+          <a class="popup-trigger">Show More</a>
+          <div class="popup">
+            <div class="content" style="text-align: center">
+              <img class="overlayimg" src="{{picture}}">
+              <p id ="description">{{description}}</p>
+              <p>Starting Location:  <span id="startingLoc">{{startingLoc}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc1">{{location1}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc2">{{location2}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc3">{{location3}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc4">{{location4}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc5">{{location5}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc6">{{location6}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc7">{{location7}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc8">{{location8}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc9">{{location9}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc10">{{location10}}</span></p>
+              <p>Ending Location:  <span id="endingLoc">{{endingLoc}}</span></p>
+              <p>Theme:<span id="theme">{{theme}}</span></p>
+            </div>
+            <div class="popup-btn-close">close</div>
+            <div class="popup-btn-share" onclick="shared()">share</div>
+            <div class="popup-btn-start" onclick="start()">start adventure</div>
+          </div>
         </div>
-    </body>
-    <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      </div>
+      {{/each}}
+    </div>
+  </body>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-93368706-1', 'auto');
-    ga('send', 'pageview');
-    </script>
+  ga('create', 'UA-93368706-1', 'auto');
+  ga('send', 'pageview');
+  </script>
 </section>
 
 <script src="js/main.js"></script>
 <script src="js/bootstrap.js"></script>
 
-  <script type="text/javascript">
+<script type="text/javascript">
 function shared() {
-    swal({
-        title: "Shared to Feed!",
-       // text: "Here's my error message!",
-        type: "success",
-        showCancelButton: true,
-        cancelButtonText: "Go to feed",
-        confirmButtonText: "Keep looking at the Bucketlist",
-        closeOnConfirm: false,
-        closeOnCancel: false
-    },
-    function(isConfirm) {
-        if(isConfirm) {
-            window.location.replace("bucket");
-        }else {
-            window.location.replace("/");
-        }
-    });
+  swal({
+    title: "Shared to Feed!",
+    // text: "Here's my error message!",
+    type: "success",
+    showCancelButton: true,
+    cancelButtonText: "Go to feed",
+    confirmButtonText: "Keep looking at the Bucketlist",
+    closeOnConfirm: false,
+    closeOnCancel: false
+  },
+  function(isConfirm) {
+    if(isConfirm) {
+      window.location.replace("bucket");
+    }else {
+      window.location.replace("/");
+    }
+  });
 }
 
 function start() {
-    swal({
-        title: "Started a new adventure!!",
-       // text: "Here's my error message!",
-        type: "success",
-        showCancelButton: true,
-        cancelButtonText: "Head to the Adventures page",
-        confirmButtonText: "Keep looking at the Bucketlist",
-        closeOnConfirm: false,
-        closeOnCancel: false
-    },
-    function(isConfirm) {
-        if(isConfirm) {
-            window.location.replace("bucket");
-        }else {
-            window.location.replace("start_adventure");
-        }
-    });
+  swal({
+    title: "Started a new adventure!!",
+    // text: "Here's my error message!",
+    type: "success",
+    showCancelButton: true,
+    cancelButtonText: "Head to the Adventures page",
+    confirmButtonText: "Keep looking at the Bucketlist",
+    closeOnConfirm: false,
+    closeOnCancel: false
+  },
+  function(isConfirm) {
+    if(isConfirm) {
+      window.location.replace("bucket");
+    }else {
+      window.location.replace("start_adventure");
+    }
+  });
 }
 
 $("#message").ready(function(){
-	if($('.bucket_text').length) {
-  	$("#message").hide();
-	}
+  if($('.bucket_text').length) {
+    $("#message").hide();
+  }
 });
 
 //Add to start_adventure
 $('.popup-btn-start').click(function() {
-    var a = $(this).parent().children().children().attr('src');
-    var d = $(this).parent().children().children().children('#description').text();
-    var e = $(this).parent().children().children().children('#startingLoc').text();
-    var f = $(this).parent().children().children().children('#endingLoc').text();
-    var g = $(this).parent().children().children().children('#theme').text();
-    $.get("adventures", {picture: a, description: d, startingLoc: e, endingLoc: f, theme: g});
+  var a = $(this).parent().children().children().attr('src');
+  var b = $(this).parent().children().children().children('#description').text();
+  var c = $(this).parent().children().children().children('#startingLoc').text();
+  var d = $(this).parent().children().children().children('#endingLoc').text();
+  var e = $(this).parent().children().children().children('#theme').text();
+  var f = $(this).parent().children().children().children('#intloc1').text();
+  var g = $(this).parent().children().children().children('#intloc2').text();
+  var h = $(this).parent().children().children().children('#intloc3').text();
+  var i = $(this).parent().children().children().children('#intloc4').text();
+  var j = $(this).parent().children().children().children('#intloc5').text();
+  var k = $(this).parent().children().children().children('#intloc6').text();
+  var l = $(this).parent().children().children().children('#intloc7').text();
+  var m = $(this).parent().children().children().children('#intloc8').text();
+  var n = $(this).parent().children().children().children('#intloc9').text();
+  var o = $(this).parent().children().children().children('#intloc10').text()
+  $.get("adventures", {picture: a,
+    description: b, startingLoc: c, endingLoc: d, theme: e, location1: f, location2: g, location3: h,
+    location4: i, location5: j, location6: k, location7: l, location8: m, location9: n, location10: o});
 });
 
 // Popup Window
@@ -199,9 +221,9 @@ $(window).bind('scroll', function() {
 $('.popup-trigger').click(function(e) {
   document.body.style.overflow = "hidden";
   e.stopPropagation();
-    $('.popup').after('<div class="page-cover"></div>');
-    $('.popups').hide();
-    $(this).nextAll('.popup:first').removeClass('popup-mobile').css('top', newHeight).toggle();
+  $('.popup').after('<div class="page-cover"></div>');
+  $('.popups').hide();
+  $(this).nextAll('.popup:first').removeClass('popup-mobile').css('top', newHeight).toggle();
 });
 
 $('html, .popup-btn-close').click(function(e) {
@@ -211,14 +233,14 @@ $('html, .popup-btn-close').click(function(e) {
 });
 
 $('.popup-btn-share').click(function() {
-    var a = $(this).parent().children().children().attr('src');
-    var d = $(this).parent().children().children().children('#description').text();
-    var e = $(this).parent().children().children().children('#startingLoc').text();
-    var f = $(this).parent().children().children().children('#endingLoc').text();
-    var g = $(this).parent().children().children().children('#theme').text();
-    var b = "DEC";
-    var d = "10";
-    $.get("feed", {feedPicture: a, description: d, startingLoc: e, endingLoc: f, theme: g, month: b, date: d});
+  var a = $(this).parent().children().children().attr('src');
+  var d = $(this).parent().children().children().children('#description').text();
+  var e = $(this).parent().children().children().children('#startingLoc').text();
+  var f = $(this).parent().children().children().children('#endingLoc').text();
+  var g = $(this).parent().children().children().children('#theme').text();
+  var b = "DEC";
+  var d = "10";
+  $.get("feed", {feedPicture: a, description: d, startingLoc: e, endingLoc: f, theme: g, month: b, date: d});
 });
 
 $('.popup').click(function(e){

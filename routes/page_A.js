@@ -1,19 +1,20 @@
+//CODE FOR A/B TESTING
 var data = require('../index.json');
-exports.view = function(req, res){
-  res.render('index', data);
+exports.viewA = function(req, res){
+  res.render('page_A', data);
 };
 
 var feed = require("../index.json");
 
-exports.view = function(req, res){
-if (req.session.user) {
-    res.render('index',feed);
-} else {
-    res.redirect("/login")
-}
+exports.viewA = function(req, res){
+  if (req.session.user) {
+      res.render('page_A',feed);
+  } else {
+      res.redirect("/login")
+  }
 };
 
-exports.addToFeed = function(req, res) {
+exports.addToFeedA = function(req, res) {
 	var a = { feedPicture: req.query.feedPicture,
           month: req.query.month,
           date: req.query.date,
@@ -22,6 +23,6 @@ exports.addToFeed = function(req, res) {
   				endingLoc: req.query.endingLoc,
   				theme: req.query.theme
   			};
-    res.render('index', feed);
+    res.render('page_A', feed);
     feed.feed_object.unshift(a);
 };

@@ -13,11 +13,12 @@ var qt = require('quickthumb');
 var hash = require('./pass').hash;
 
 var index = require('./routes/index');
+var page_A = require('./routes/page_A');
+var page_B = require('./routes/page_B');
+
 var bucket = require('./routes/bucket');
 var friend = require('./routes/friend');
-//var map = require('./routes/map');
 var adventure = require('./routes/adventure');
-//var share = require('./routes/share');
 var login = require('./routes/login');
 var start_adventure = require('./routes/start_adventure');
 
@@ -67,11 +68,11 @@ app.use(express.cookieParser('Authentication Tutorial '));
 
 // Add routes here
 app.get('/', index.view);
-app.get('/page_A', index.viewA);
-app.get('/page_B', index.viewB);
+app.get('/page_A', page_A.viewA);
+app.get('/page_B', page_B.viewB);
 app.get('/feed', index.addToFeed);
-app.get('/feed_A', index.addToFeedA);
-app.get('/feed_B', index.addToFeedB);
+app.get('/feed_A', page_A.addToFeedA);
+app.get('/feed_B', page_B.addToFeedB);
 
 app.get('/bucket', bucket.view);
 app.get('/buckets', bucket.addToBucket);
