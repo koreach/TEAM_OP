@@ -691,11 +691,16 @@ nav .active {
 	bottom: 90%;
 	right: 3%
 }
+@media screen and (max-width: 768px)
+{ #mimg {
+	background-image: url("../images/adventure_mob.PNG") !important;
+	}
+}
 
 #mimg {
-	background-image: url("../images/lajolla_beach.png");
+	background-image: url("../images/adventure.jpg");
 	width: 100%;
-	height: 1000px;
+	height: 650px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	overflow: initial;
