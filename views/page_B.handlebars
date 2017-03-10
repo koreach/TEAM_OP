@@ -77,7 +77,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
     <div class="container">
       <div>
         {{#each feed_object}}
-        <div class="feed-box col-md-6 col-sm-12 col-xs-12">
+        <div class="feed-box col-md-6 col-sm-12 col-xs-12" style="margin-top: 5px;">
           <div>
             <div class="monthDateContainer">
               <div class="month">{{month}} </div>
@@ -85,16 +85,28 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
             </div>
             <div class="feed-info">
               {{#each joinedList.peopleJoined}}
-              <img class="prof-pic2" src="{{face}}">
+              <img class="prof-pic" src="{{face}}">
               {{/each}}
             </div>
           </div>
           <div class="img-layout">
-            <img class="picture" src="{{feedPicture}}">
+            <img class="picture card" src="{{feedPicture}}">
             <div class="col-md-6 description">
               <p id="description">{{description}}</p>
               <p id="starting">Starting Location: <span id="startingLoc">{{startingLoc}}</span></p>
               <p id="endingLoc">Ending Location: <span id="endingLoc">{{endingLoc}}</span></p>
+
+              <p>Intermediate Locations: <span id = "intloc1" class = "intermediate">{{location1}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc2" class = "intermediate">{{location2}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc3" class = "intermediate">{{location3}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc4" class = "intermediate">{{location4}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc5" class = "intermediate">{{location5}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc6" class = "intermediate">{{location6}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc7" class = "intermediate">{{location7}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc8" class = "intermediate">{{location8}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc9" class = "intermediate">{{location9}}</span></p>
+              <p>Intermediate Locations: <span id = "intloc10" class = "intermediate">{{location10}}</span></p>
+
               <p>Theme: <span id="theme">{{theme}}</span></p>
               <div>
                 <div onclick="comment()" class="add-button col-md-5 col-sm-5 col-xs-5"><img class="nav-icon" src="images/plusicon2.png"></div>
@@ -123,6 +135,12 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 <script src="js/bootstrap.js"></script>
 <script src="js/main.js"></script>
 <script type="text/javascript">
+
+$('span.intermediate').each(function(i,e){
+				$(e).parent().hide();
+});
+
+
 $('.bucket-button').click(function() {
   var a = $(this).parent().parent().parent().children().attr('src');
   var b = $(this).parent().parent().parent().parent().children().children().children('.month').text();
@@ -131,9 +149,21 @@ $('.bucket-button').click(function() {
   var e = $(this).parent().parent().children().children('#startingLoc').text();
   var f = $(this).parent().parent().children().children('#endingLoc').text();
   var g = $(this).parent().parent().children().children('#theme').text();
+  var h = $(this).parent().parent().children().children('#intloc1').text();
+  var i = $(this).parent().parent().children().children('#intloc2').text();
+  var j = $(this).parent().parent().children().children('#intloc3').text();
+  var k = $(this).parent().parent().children().children('#intloc4').text();
+  var l = $(this).parent().parent().children().children('#intloc5').text();
+  var m = $(this).parent().parent().children().children('#intloc6').text();
+  var n = $(this).parent().parent().children().children('#intloc7').text();
+  var o = $(this).parent().parent().children().children('#intloc8').text();
+  var p = $(this).parent().parent().children().children('#intloc9').text();
+  var q = $(this).parent().parent().children().children('#intloc10').text();
 
   var z = b + c;
-  $.get("buckets", {picture: a, date: z, description: d, startingLoc: e, endingLoc: f, theme: g});
+  $.get("buckets", {picture: a, date: z, description: d, startingLoc: e, endingLoc: f, theme: g,
+    location1: h, location2: i, location3: j, location4: k, location5: l, location6: m,
+    location7: n, location8: o, location9: p, location10: q});
 });
 
 $('.img-layout').click(function() {

@@ -677,9 +677,6 @@ nav .active {
 	width: 720px;
 	position: relative;
 	color:black;
-	-webkit-box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.65);
--moz-box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.65);
-box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.65);
 }
 
 @media screen and (max-width: 768px)
@@ -887,7 +884,4 @@ box-shadow: 0px 0px 18px 5px rgba(0,0,0,0.65);
 	width: 60%;
 	margin: 0 auto;
 	margin-bottom: 30px;
-	-webkit-box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 23px 5px rgba(0,0,0,0.75);
 }
