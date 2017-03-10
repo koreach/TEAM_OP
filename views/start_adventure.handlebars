@@ -76,10 +76,10 @@
 	<div class="adventure">
 		{{#each adventure}}
 		<div class="container" src = "count()">
-			<div class="col-md-6 col-sm-12 col-xs-12">
-				<img class = "pictures" src = "{{picture}}" style = "margin-top: 15px; !important">
+			<div class="col-md-6 col-sm-12 col-xs-12 ">
+				<img class = "pictures card" src = "{{picture}}" style = "margin-top: 15px; !important">
 				<p2>Your Current Adventure</p2>
-				<div class=" text-box col-md-12 col-sm-12 col-xs-12">
+				<div class=" text-box col-md-12 col-sm-12 col-xs-12 card">
 					<img src = "images/Color Fill 1.png" class ="stopbutton">
 					<div class = "adventures">
 						<div class = "text">
@@ -89,8 +89,8 @@
 							<p1>{{startingLoc}}</p1>
 							<p>End:</p>
 							<p1>{{endingLoc}}</p1>
-							<p>Desctiption:</p>
-							<p1>This is something really cool that everyone should check out tbh</p1>
+							<p>Description:</p>
+							<p1>{{description}}</p1>
 						</div>
 					</div>
 				</div>
@@ -101,40 +101,40 @@
 						<div class="visit"> Spots to Visit: </div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 align-element2" >
-					<div class = "adventurestatus"> {{startingLoc}} <img src = "images/no.png" class ="button"> </div>
+					<div class = "adventurestatus card"> {{startingLoc}} <img src = "images/no.png" class ="button"> </div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 align-element2" >
-					<div class = "adventurestatus"> {{location1}} <img src = "images/no.png" class ="button"> </div>
+					<div class = "adventurestatus card"> {{location1}} <img src = "images/no.png" class ="button"> </div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 align-element2" >
-					<div class = "adventurestatus"> {{location2}} <img src = "images/no.png" class ="button"> </div>
+					<div class = "adventurestatus card"> {{location2}} <img src = "images/no.png" class ="button"> </div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 align-element2" >
-					<div class = "adventurestatus"> {{location3}} <img src = "images/no.png" class ="button"> </div>
+					<div class = "adventurestatus card"> {{location3}} <img src = "images/no.png" class ="button"> </div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 align-element2" >
-					<div class = "adventurestatus"> {{location4}} <img src = "images/no.png" class ="button"> </div>
+					<div class = "adventurestatus card"> {{location4}} <img src = "images/no.png" class ="button"> </div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 align-element2" >
-					<div class = "adventurestatus"> {{location5}} <img src = "images/no.png" class ="button"> </div>
+					<div class = "adventurestatus card"> {{location5}} <img src = "images/no.png" class ="button"> </div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 align-element2" >
-					<div class = "adventurestatus"> {{location6}} <img src = "images/no.png" class ="button"> </div>
+					<div class = "adventurestatus card"> {{location6}} <img src = "images/no.png" class ="button"> </div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 align-element2" >
-					<div class = "adventurestatus"> {{location7}} <img src = "images/no.png" class ="button"> </div>
+					<div class = "adventurestatus card"> {{location7}} <img src = "images/no.png" class ="button"> </div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 align-element2" >
-					<div class = "adventurestatus"> {{location8}} <img src = "images/no.png" class ="button"> </div>
+					<div class = "adventurestatus card"> {{location8}} <img src = "images/no.png" class ="button"> </div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 align-element2" >
-					<div class = "adventurestatus"> {{location9}} <img src = "images/no.png" class ="button"> </div>
+					<div class = "adventurestatus card"> {{location9}} <img src = "images/no.png" class ="button"> </div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 align-element2" >
-					<div class = "adventurestatus"> {{location10}} <img src = "images/no.png" class ="button"> </div>
+					<div class = "adventurestatus card"> {{location10}} <img src = "images/no.png" class ="button"> </div>
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 align-element2" >
-					<div class = "adventurestatus"> {{endingLoc}} <img src = "images/no.png" class ="button"> </div>
+					<div class = "adventurestatus card"> {{endingLoc}} <img src = "images/no.png" class ="button"> </div>
 				</div>
 			</div>
 		</div>
@@ -187,8 +187,16 @@ $(function() {
 })
 
 $('.stopbutton').click(function(e) {
-	$.get("deleteFrom");
-	var curr = $(this).parent().parent().parent().fadeOut();
+	var answer = confirm("Are you sure about deleting this adventure?")
+	if (answer) {
+		$.get("deleteFrom");
+		var curr = $(this).parent().parent().parent().fadeOut();
+		location.reload();
+	}
+	else {
+	    //some code
+	}
+
 });
 
 $("#message").ready(function(){
