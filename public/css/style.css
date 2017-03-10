@@ -137,14 +137,13 @@ nav .active {
 
 .img-layout .description {
 	position: absolute;
-	top: 36px;
-	padding-right: 40px;
+	top: 25px;
+	padding-right: 25px;
 	display: none;
 	color:#fff;
 	width: 100%;
 	height: 65%;
 }
-
 
 @media screen and (max-width: 768px) {.img-layout .description {
 		font-size: 3vw !important;
@@ -176,6 +175,14 @@ nav .active {
 @media screen and (max-width: 768px) {.align-element3 {
 	margin-top: 6px !important;
 } }
+
+@media screen and (max-width: 768px) {.popup_text {
+	height: 200px !important;
+} }
+
+.popup_text {
+	height: 150px;
+}
 
 .align-element {
 	margin-top: 15px;
@@ -627,7 +634,7 @@ nav .active {
 	position: relative;
 }
 .img-layout .picture {
-	max-width: 100%;
+	max-width: 99%;
 	height: auto;
 	margin: 0 auto;
 	width: 720px;

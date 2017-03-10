@@ -156,11 +156,17 @@
 <script src="js/bootstrap.js"></script>
 
 <script>
-$(document).ready(function() {
-   str = $('div.adventurestatus').text();
-   if($.trim(str) === "") {
-     $('div.adventurestatus').hide();
-   }
+$('div.adventurestatus').each(function(i,e){
+    var txt = '';
+    for (var c = 0; c < e.childNodes.length; c++){
+        if (e.childNodes[c].nodeType===3){
+            txt += e.childNodes[c].data;
+        }
+    }
+    if (txt.trim().length===0){
+        $(e).hide();
+				$(e).parent().hide();
+    }
 });
 
 $(function() {
