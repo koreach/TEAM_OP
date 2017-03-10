@@ -41,18 +41,6 @@
             <a href="/logout">
               <li>Log Out</li>
             </a>
-            <a href="friend">
-              <li>Create an Adventure</li>
-            </a>
-            <a href="/">
-              <li>Newsfeed</li>
-            </a>
-            <a href="start_adventure">
-              <li>Start Adventuring</li>
-            </a>
-            <a href="bucket">
-              <li>Bucket List</li>
-            </a>
           </ul>
         </div>
       </div>
@@ -60,9 +48,10 @@
   </div>
 </header>
 <!--Actual start of the content-->
-<div class="container">
-  <h1 style="text-align: center; letter-spacing: -1px;">Create Your Own Adventure</h1>
-  <form action="/upload" enctype="multipart/form-data" method="post" style="margin: 0 20px">
+<div class="container" >
+  <div class="createAdv">
+  <h1 style="text-align: center; letter-spacing: -1px; padding-top: 10px">Create Your Own Adventure</h1>
+  <form action="/upload" enctype="multipart/form-data" method="post" style="margin: 0 20px; padding-bottom: 10px;">
     <div class="form-group">
       <label for="title">Title</label>
       <input type="text" class="form-control" id="title" placeholder="Title" name="title" required>
@@ -101,6 +90,7 @@
     </div>
     <input type="submit" class="btn btn-primary btn-lg" value="Upload"/>
   </form>
+  </div>
 </div>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
