@@ -710,8 +710,20 @@ nav .active {
 
 @media screen and (max-width: 768px)
 { .foo {
-	width: 60vw !important;
+	width: 80vw !important;
 	height: 80vw !important;
+	border: 1px solid rgba(0, 0, 0, .2) !important;
+	display: block !important;
+	margin-top: 20vw !important;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+}}
+
+@media screen and (max-width: 768px)
+{ .foo1 {
+	width: 80vw !important;
+	height: 90vw !important;
 	border: 1px solid rgba(0, 0, 0, .2) !important;
 	display: block !important;
 	margin-top: 20vw !important;
@@ -725,11 +737,25 @@ nav .active {
 {
 	.foo {
 		font-size: 4vw !important;
+	}
+	.foo1 {
+		font-size: 4vw !important;
+	
 }}
 
 	.foo {
-		width: 40vw;
-		height: 30vw;
+		width: 540px;
+		height: 320px;
+		border: 1px solid rgba(0, 0, 0, .2);
+		display: block;
+		margin-top: 5vw;
+		margin-right: auto;
+		margin-bottom: auto;
+		margin-left: auto;
+	}
+	.foo1 {
+		width: 540px;
+		height: 350px;
 		border: 1px solid rgba(0, 0, 0, .2);
 		display: block;
 		margin-top: 5vw;
@@ -743,7 +769,14 @@ nav .active {
 		opacity: 0.7;
 	}
 
-	div .foo h2 {
+	div .foo h1 {
+		margin: 5%;
+		font-weight: bold;
+		color: #000000;
+		text-align: center;
+		margin-top: 20px
+	}
+	div .foo1 h1 {
 		margin: 5%;
 		font-weight: bold;
 		color: #000000;
@@ -754,23 +787,23 @@ nav .active {
 	@media screen and (max-width: 768px)
 	{
 		.foobutton {
-			font-size: 4vw !important;
+			font-size: 5vw !important;
 	}}
 
 	@media screen and (max-width: 768px)
 	{
 		.foobutton2  {
-			font-size: 4vw !important;
+			font-size: 5vw !important;
 	}}
 
 	.foobutton {
 		color: white;
 		border: none;
 		box-shadow: none;
-		font-size: 2.5vw;
+		font-size: 1.6em;
 		font-weight: 500;
 		border-radius: 5px;
-		padding: 10px 32px;
+		padding: 20px 42px;
 		margin-top: 50px !important;
 		display: block;
 		margin: auto;
@@ -783,10 +816,10 @@ nav .active {
 		color: white;
 		border: none;
 		box-shadow: none;
-		font-size: 2.5vw;
+		font-size: 1.6em;
 		font-weight: 500;
 		border-radius: 5px;
-		padding: 10px 32px;
+		padding: 20px 42px;
 		display: block;
 		margin: auto;
 		margin-top: 10px !important;
