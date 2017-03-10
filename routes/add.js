@@ -21,7 +21,7 @@ module.exports = {
       date = fields.date;
       theme = fields.theme;
       description = fields.description;
-      startingloc = fields.startingLoc;
+      startingLoc = fields.startingLoc;
       location1 = fields.textbox1;
       location2 = fields.textbox2;
       location3 = fields.textbox3;
@@ -32,7 +32,7 @@ module.exports = {
       location8 = fields.textbox8;
       location9 = fields.textbox9;
       location10 = fields.textbox10;
-      endingloc = fields.endingLoc;
+      endingLoc = fields.endingLoc;
       //res.writeHead(200, {'content-type': 'text/plain'});
       //res.write('received upload:\n\n');
       res.location('/friend');
@@ -51,7 +51,7 @@ module.exports = {
         "date": date,
         "theme": theme,
         "description": description,
-        "startingLoc": startingloc,
+        "startingLoc": startingLoc,
         "location1": location1,
         "location2": location2,
         "location3": location3,
@@ -62,7 +62,7 @@ module.exports = {
         "location8": location8,
         "location9": location9,
         "location10": location10,
-        "endingLoc": endingloc,
+        "endingLoc": endingLoc,
         "picture": "images/" + pic
       });
       /* Temporary location of our uploaded file */

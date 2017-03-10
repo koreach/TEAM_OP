@@ -33,10 +33,10 @@ exports.view = function(req, res){
 };
 
 exports.addToBucket = function(req, res) {
-	var buc = { picture: req.query.picture, date: req.query.date,
+	var buc = { picture: req.query.picture,
+          date: req.query.date,
   				description: req.query.description,
   				startingLoc: req.query.startingLoc,
-  				endingLoc: req.query.endingLoc,
           location1: req.query.location1,
           location2: req.query.location2,
           location3: req.query.location3,
@@ -47,6 +47,7 @@ exports.addToBucket = function(req, res) {
           location8: req.query.location8,
           location9: req.query.location9,
           location10: req.query.location10,
+          endingLoc: req.query.endingLoc,
   				theme: req.query.theme
   			};
 

@@ -78,7 +78,7 @@
     <div id = "message">
       <div id = "mimg" class="container">
         <div class="foo blue">
-          <h2>Start Your Adventure Today!</h2>
+          <h2>Add your adventure!</h2>
           <a href="friend">
             <button class="foobutton" formaction="friend">Create New Adventure</button>
           </a>
@@ -221,10 +221,11 @@ $('.popup-btn-start').click(function() {
   var l = $(this).parent().children().children().children().children('#intloc7').text();
   var m = $(this).parent().children().children().children().children('#intloc8').text();
   var n = $(this).parent().children().children().children().children('#intloc9').text();
-  var o = $(this).parent().children().children().children().children('#intloc10').text()
+  var o = $(this).parent().children().children().children().children('#intloc10').text();
   $.get("adventures", {picture: a,
     description: b, startingLoc: c, endingLoc: d, theme: e, location1: f, location2: g, location3: h,
-    location4: i, location5: j, location6: k, location7: l, location8: m, location9: n, location10: o});
+    location4: i, location5: j, location6: k, location7: l, location8: m, location9: n, location10: o
+  });
 });
 
 // Popup Window
@@ -252,13 +253,31 @@ $('html, .popup-btn-close').click(function(e) {
 
 $('.popup-btn-share').click(function() {
   var a = $(this).parent().children().children().attr('src');
-  var d = $(this).parent().children().children().children('#description').text();
-  var e = $(this).parent().children().children().children('#startingLoc').text();
-  var f = $(this).parent().children().children().children('#endingLoc').text();
-  var g = $(this).parent().children().children().children('#theme').text();
+  var d = $(this).parent().children().children().children().children('#description').text();
+  var e = $(this).parent().children().children().children().children('#startingLoc').text();
+  var f = $(this).parent().children().children().children().children('#endingLoc').text();
+  var g = $(this).parent().children().children().children().children('#theme').text();
+  var f = $(this).parent().children().children().children().children('#intloc1').text();
+  var p = $(this).parent().children().children().children().children('#intloc2').text();
+  var h = $(this).parent().children().children().children().children('#intloc3').text();
+  var i = $(this).parent().children().children().children().children('#intloc4').text();
+  var j = $(this).parent().children().children().children().children('#intloc5').text();
+  var k = $(this).parent().children().children().children().children('#intloc6').text();
+  var l = $(this).parent().children().children().children().children('#intloc7').text();
+  var m = $(this).parent().children().children().children().children('#intloc8').text();
+  var n = $(this).parent().children().children().children().children('#intloc9').text();
+  var o = $(this).parent().children().children().children().children('#intloc10').text()
   var b = "DEC";
-  var d = "10";
-  $.get("feed", {feedPicture: a, description: d, startingLoc: e, endingLoc: f, theme: g, month: b, date: d});
+  var z = "10";
+  $.get("feed", {feedPicture: a, description: d, theme: g, startingLoc: e, endingLoc: f, location1: f, location2: p, location3: h,
+  location4: i, location5: j, location6: k, location7: l, location8: m, location9: n, location10: o, theme: g, month: b, date: z,
+  joinedList: {peopleJoined: [{face:"http://itzkong.s3-us-west-2.amazonaws.com/wp-content/uploads/2016/10/27140330/itzkong_20161027150333-422x375.jpg"
+  }, {  face:"https://ih0.redbubble.net/image.144683379.8590/flat,800x800,070,f.jpg"
+  }, {  face:"http://ww1.hdnux.com/photos/54/77/60/11795488/3/920x920.jpg"
+  }, {  face:"http://www.designboom.com/wp-content/uploads/2016/01/gesichtermix-celebrity-photoshop-mashup-designboom-012.jpg"
+  }, {  face:"https://www.cheap-flyer-printer.com/shop/product_images/j/the_queen_2012__74627.png"
+    }]}
+  });
 });
 
 $('.popup').click(function(e){
