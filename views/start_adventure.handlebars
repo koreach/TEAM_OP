@@ -187,10 +187,8 @@ $(function() {
 })
 
 $('.stopbutton').click(function(e) {
-	$.getJSON('start_adventure.json', function(data) {
-		console.log(data);
-  	delete data.adventure[1];
-	});
+	$.get("deleteFrom");
+	var curr = $(this).parent().parent().parent().fadeOut();
 });
 
 $("#message").ready(function(){

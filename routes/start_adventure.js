@@ -39,3 +39,13 @@ exports.addToAdventure = function(req, res) {
 exports.delTripDay = function() {
   adventures.splice(index, 1); // then delete by index
 };
+
+
+exports.delete = function(req,res) { //console.log(req.query.a);
+    //var x = JSON.parse(adventures.adventure);
+    //console.log(adventures.adventure[req.query.a]);
+    //var index = adventures.adventure.map(function(d) {return count;}).indexOf(req.query.a); console.log(index);
+    adventures.adventure.splice(0,1);
+    //    count--;
+    //delete adventures.adventure[req.query.a];
+};

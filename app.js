@@ -87,6 +87,7 @@ app.get('/createlogin', createlogin.view);
 app.get('/start_adventure', start_adventure.view);
 app.get('/adventures', start_adventure.addToAdventure);
 //app.get('/add', add.addAdventure);
+app.get("/deleteFrom", start_adventure.delete);
 
 app.use(qt.static(__dirname + '/'));
 app.post('/upload', add.upload);
