@@ -54,7 +54,18 @@
             <a href="/logout">
               <li>Log Out</li>
             </a>
-            
+            <a href="friend">
+              <li>Create an Adventure</li>
+            </a>
+            <a href="/">
+              <li>Newsfeed</li>
+            </a>
+            <a href="start_adventure">
+              <li>Start Adventuring</li>
+            </a>
+            <a href="bucket">
+              <li>Bucket List</li>
+            </a>
           </ul>
         </div>
       </div>
@@ -109,11 +120,9 @@
                 <p><b>Ending Location: </b><span id="endingLoc">{{endingLoc}}</span></p>
               </div>
             </div>
-            <div style="margin-top: 25px;">
-            <div class="popup-btn-start " onclick="start()" style="float:left; font-size: 25px">start</div>
-            <div class="popup-btn-close cancelBucket" style="float: left; width: 40%"><img src="https://image.flaticon.com/icons/png/512/69/69324.png" style="width: 50px"> </div>
-            <div class="popup-btn-share " onclick="shared()" style="float: right; font-size: 25px;">share</div>
-            </div>
+            <div class="popup-btn-start" onclick="start()">start adventure</div>
+            <div class="popup-btn-close">close</div>
+            <div class="popup-btn-share" onclick="shared()">share</div>
           </div>
         </div>
       </div>
@@ -125,10 +134,8 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-93242528-1', 'auto');
     ga('send', 'pageview');
-
   </script>
 </section>
 
@@ -145,11 +152,9 @@ $('span.intermediate').each(function(i,e){
     }
     if (txt.trim().length===0){
         $(e).hide();
-				$(e).parent().hide();
+        $(e).parent().hide();
     }
 });
-
-
 function shared() {
   swal({
     title: "Shared to Feed!",
@@ -169,7 +174,6 @@ function shared() {
     }
   });
 }
-
 function start() {
   swal({
     title: "Started a new adventure!!",
@@ -189,13 +193,11 @@ function start() {
     }
   });
 }
-
 $("#message").ready(function(){
   if($('.bucket_text').length) {
     $("#message").hide();
   }
 });
-
 //Add to start_adventure
 $('.popup-btn-start').click(function() {
   var a = $(this).parent().children().children().attr('src');
@@ -218,16 +220,13 @@ $('.popup-btn-start').click(function() {
     location4: i, location5: j, location6: k, location7: l, location8: m, location9: n, location10: o
   });
 });
-
 // Popup Window
 var scrollTop = '';
 var newHeight = '100';
-
 $(window).bind('scroll', function() {
   scrollTop = $( window ).scrollTop();
   newHeight = scrollTop + 100;
 });
-
 $('.popup-trigger').click(function(e) {
   document.body.style.overflow = "hidden";
   e.stopPropagation();
@@ -235,13 +234,11 @@ $('.popup-trigger').click(function(e) {
   $('.popups').hide();
   $(this).nextAll('.popup:first').removeClass('popup-mobile').css('top', newHeight).toggle();
 });
-
 $('html, .popup-btn-close').click(function(e) {
   document.body.style.overflow = "visible";
   $('.popup').hide();
   $('.page-cover').detach();
 });
-
 $('.popup-btn-share').click(function() {
   var a = $(this).parent().children().children().attr('src');
   var d = $(this).parent().children().children().children().children('#description').text();
@@ -270,7 +267,6 @@ $('.popup-btn-share').click(function() {
     }]}
   });
 });
-
 $('.popup').click(function(e){
   e.stopPropagation();
 });

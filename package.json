@@ -2,9 +2,10 @@
   "name": "IntroHCI",
   "version": "0.0.1",
   "author": "Intro HCI Staff",
+  "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/IntroHCI/lab4"
+    "url": "https://github.com/koreach/TEAM_OP"
   },
   "license": "MIT",
   "private": true,
