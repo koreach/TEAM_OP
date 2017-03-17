@@ -10,6 +10,7 @@
 </link>
 <link rel="stylesheet" href="css/style.css">
 </link>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"></link>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/sweetalert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
@@ -51,6 +52,10 @@
 <section id="index">
   <body>
     <div class="container" style="margin-bottom: 30px">
+      <div class="note-first-user">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        Click on Adventure below to see details, share feedback, or add to the bucket list.
+      </div>
       <div>
         {{#each feed_object}}
         <div class="feed-box col-md-6 col-sm-12 col-xs-12" style="margin-top: 5px;">
@@ -84,10 +89,11 @@
               <p>Intermediate Locations: <span id = "intloc10" class = "intermediate">{{location10}}</span></p>
 
               <p>Theme: <span id="theme">{{theme}}</span></p>
-              <div>
-                <div onclick="comment()" class="add-button col-md-5 col-sm-5 col-xs-5"><img class="nav-icon" src="images/plusicon2.png"></div>
-                <div class="col-md-2 col-sm-2 col-xs-2"></div>
-                <div onclick="addToBucket()" class="bucket-button col-md-5 col-sm-5 col-xs-5"><img class="nav-icon" src="images/Bucketlist Icon.png"></div>
+              <div style="padding-top: 15px;">
+                <div onclick="comment()" class="add-button col-md-4 col-sm-4 col-xs-4"><img class="nav-icon" src="images/cloud_messagebox.png"></div>
+                
+                <div onclick="addToBucket()" class="bucket-button col-md-4 col-sm-4 col-xs-4"><img class="nav-icon" src="images/Bucketlist Icon.png"></div>
+                <div onclick="addToAdventure()" class="adventure-button col-md-4 col-sm-4 col-xs-4"><img class="nav-icon" src="images/Mountain.png"></div>
               </div>
             </div>
           </div>
@@ -141,11 +147,44 @@ $('.bucket-button').click(function() {
     location1: h, location2: i, location3: j, location4: k, location5: l, location6: m,
     location7: n, location8: o, location9: p, location10: q});
 });
+$('.adventure-button').click(function() {
+  var a = $(this).parent().parent().parent().children().attr('src');
+  var b = $(this).parent().parent().parent().parent().children().children().children('.month').text();
+  var c = $(this).parent().parent().parent().parent().children().children().children('.date').text();
+  var d = $(this).parent().parent().children('#description').text();
+  var e = $(this).parent().parent().children().children('#startingLoc').text();
+  var f = $(this).parent().parent().children().children('#endingLoc').text();
+  var g = $(this).parent().parent().children().children('#theme').text();
+  var h = $(this).parent().parent().children().children('#intloc1').text();
+  var i = $(this).parent().parent().children().children('#intloc2').text();
+  var j = $(this).parent().parent().children().children('#intloc3').text();
+  var k = $(this).parent().parent().children().children('#intloc4').text();
+  var l = $(this).parent().parent().children().children('#intloc5').text();
+  var m = $(this).parent().parent().children().children('#intloc6').text();
+  var n = $(this).parent().parent().children().children('#intloc7').text();
+  var o = $(this).parent().parent().children().children('#intloc8').text();
+  var p = $(this).parent().parent().children().children('#intloc9').text();
+  var q = $(this).parent().parent().children().children('#intloc10').text();
+
+  var z = b + c;
+  $.get("adventures", {picture: a, date: z, description: d, startingLoc: e, endingLoc: f, theme: g,
+    location1: h, location2: i, location3: j, location4: k, location5: l, location6: m,
+    location7: n, location8: o, location9: p, location10: q});
+});
+
 $('.img-layout').click(function() {
   $(this).children(".description").toggle(500);
   $(this).children(".picture").css('opacity', function(i,o) {
-    return parseFloat(o).toFixed(1) === '0.8' ? 1 : 0.8;
+    //return parseFloat(o).toFixed(1) === '0.8' ? 1 : 0.8;
   });
+  //$(this).children(".picture").css('filter', 'brightness(100%)'); 
+  $(this).children(".picture").css('filter', function(i,o) {
+    if (parseFloat(o).toFixed(1) == 'brightness(100%)') return 'brightness(40%)';
+    else return 'brightness(100%)';
+    
+    //return parseFloat(o).toFixed(1) === "brightness(40%)" ? "brightness(40%)" : "brightness(100%)";
+  });
+  
 });
 function addToBucket() {
   swal({
@@ -166,6 +205,26 @@ function addToBucket() {
     }
   });
 }
+function addToAdventure() {
+  swal({
+    title: "Added to adventure!",
+    // text: "Here's my error message!",
+    type: "success",
+    showCancelButton: true,
+    cancelButtonText: "Look at more Adventures",
+    confirmButtonText: "Start your Adventure!",
+    closeOnConfirm: false,
+    closeOnCancel: false
+  },
+  function(isConfirm) {
+    if(isConfirm) {
+      window.location.replace("start_adventure");
+    }else {
+      window.location.replace("/");
+    }
+  });
+}
+
 function comment() {
   swal({
     title: "Offer more Adventure Ideas!",
